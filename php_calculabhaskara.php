@@ -62,7 +62,7 @@
 		</form>
 
 		<br><p>Resultado: <?php echo $resultado; ?></p><br><br>
-		<p><a href="https://github.com/jacknpoe/php_calculadatas">Repositório no GitHub</a></p><br><br>
+		<p><a href="https://github.com/jacknpoe/php_calculabhaskara">Repositório no GitHub</a></p><br><br>
 		<form action="index.html" method="POST" style="border: 0px">
 			<p><input type="submit" name="voltar" value="Voltar"></p>
 		</form>
