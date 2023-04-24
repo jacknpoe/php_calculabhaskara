@@ -22,31 +22,32 @@
 				$valor_b = $_POST["valor_b"];
 				$valor_c = $_POST["valor_c"];
 				// mágica
-				if( intval( $valor_a) === 0)
+				if( floatval( str_replace( ',', '.', $valor_a)) === 0)
 				{
-					if( intval( $valor_b ) === 0)
+					if( floatval( str_replace( ',', '.', $valor_b)) === 0)
 					{
 						$resultado = " x é indefinido";
 					} else {
-						$resultado = "x = " . strval( intval( $valor_c ) / intval( $valor_b ) * -1 );
+						$resultado = "x = " . strval( floatval( str_replace( ',', '.', $valor_c )) / floatval( str_replace( ',', '.', $valor_b )) * -1 );
 					}
 				} else {
-					$delta = pow( intval( $valor_b), 2) - ( 4 * intval( $valor_a) * intval( $valor_c));
+					$delta = pow( floatval( str_replace( ',', '.', $valor_b)), 2) - ( 4 * floatval( str_replace( ',', '.', $valor_a)) * floatval( str_replace( ',', '.', $valor_c)));
 					if( $delta < 0)
 					{
 						$resultado = "x é indefinido";
 					} else {
 						if( $delta === 0 )
 						{
-							$valor_x = ( intval( $valor_b) * -1 ) / ( 2 * intval( $valor_a));
+							$valor_x = ( floatval( str_replace( ',', '.', $valor_b)) * -1 ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
 							$resultado = "x = " . strval( $valor_x);
 						} else {
-							$valor_x1 = ( intval( $valor_b) * -1 - sqrt( $delta) ) / ( 2 * intval( $valor_a));
-							$valor_x2 = ( intval( $valor_b) * -1 + sqrt( $delta) ) / ( 2 * intval( $valor_a));
+							$valor_x1 = ( floatval( str_replace( ',', '.', $valor_b)) * -1 - sqrt( $delta) ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
+							$valor_x2 = ( floatval( str_replace( ',', '.', $valor_b)) * -1 + sqrt( $delta) ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
 							$resultado = "x = " . strval( $valor_x1) . " e " . strval( $valor_x2);
 						}
 					}
 				}
+				$resultado = str_replace( '.', ',', $resultado);
 			}
 		?>
 		<h1>Calcula a fórmula de Bhaskara<br></h1>
