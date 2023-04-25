@@ -36,7 +36,7 @@
 					{
 						$resultado = "x é indefinido";
 					} else {
-						if( $delta === 0 )
+						if( $delta == 0 )
 						{
 							$valor_x = ( floatval( str_replace( ',', '.', $valor_b)) * -1 ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
 							$resultado = "x = " . strval( $valor_x);
