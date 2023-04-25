@@ -39,10 +39,22 @@
 						if( $delta == 0 )
 						{
 							$valor_x = ( floatval( str_replace( ',', '.', $valor_b)) * -1 ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
+							if( $valor_x == -0.0)
+							{
+								$valor_x = 0.0;
+							}
 							$resultado = "x = " . strval( $valor_x);
 						} else {
 							$valor_x1 = ( floatval( str_replace( ',', '.', $valor_b)) * -1 - sqrt( $delta) ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
 							$valor_x2 = ( floatval( str_replace( ',', '.', $valor_b)) * -1 + sqrt( $delta) ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
+							if( $valor_x1 == -0.0)
+							{
+								$valor_x1 = 0.0;
+							}
+							if( $valor_x2 == -0.0)
+							{
+								$valor_x2 = 0.0;
+							}
 							$resultado = "x = " . strval( $valor_x1) . " e " . strval( $valor_x2);
 						}
 					}
