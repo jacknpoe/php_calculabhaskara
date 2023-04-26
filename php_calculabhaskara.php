@@ -21,32 +21,41 @@
 				$valor_a = $_POST["valor_a"];
 				$valor_b = $_POST["valor_b"];
 				$valor_c = $_POST["valor_c"];
+				$float_a = floatval( str_replace( ',', '.', $valor_a));
+				$float_b = floatval( str_replace( ',', '.', $valor_b));
+				$float_c = floatval( str_replace( ',', '.', $valor_c));
+
 				// mágica
-				if( floatval( str_replace( ',', '.', $valor_a)) === 0)
+				if( $float_a == 0.0)
 				{
-					if( floatval( str_replace( ',', '.', $valor_b)) === 0)
+					if( $float_b == 0.0)
 					{
 						$resultado = " x é indefinido";
 					} else {
-						$resultado = "x = " . strval( floatval( str_replace( ',', '.', $valor_c )) / floatval( str_replace( ',', '.', $valor_b )) * -1 );
+						if( $float_c == 0.0)
+						{
+							$resultado = "x = 0";
+						} else {
+							$resultado = "x = " . strval( $float_c / $float_b * -1 );
+						}
 					}
 				} else {
-					$delta = pow( floatval( str_replace( ',', '.', $valor_b)), 2) - ( 4 * floatval( str_replace( ',', '.', $valor_a)) * floatval( str_replace( ',', '.', $valor_c)));
+					$delta = pow( $float_b, 2) - ( 4 * $float_a * $float_c);
 					if( $delta < 0)
 					{
 						$resultado = "x é indefinido";
 					} else {
 						if( $delta == 0 )
 						{
-							$valor_x = ( floatval( str_replace( ',', '.', $valor_b)) * -1 ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
+							$valor_x = ( $float_b * -1 ) / ( 2 * $float_a);
 							if( $valor_x == -0.0)
 							{
 								$valor_x = 0.0;
 							}
 							$resultado = "x = " . strval( $valor_x);
 						} else {
-							$valor_x1 = ( floatval( str_replace( ',', '.', $valor_b)) * -1 - sqrt( $delta) ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
-							$valor_x2 = ( floatval( str_replace( ',', '.', $valor_b)) * -1 + sqrt( $delta) ) / ( 2 * floatval( str_replace( ',', '.', $valor_a)));
+							$valor_x1 = ( $float_b * -1 - sqrt( $delta) ) / ( 2 * $float_a);
+							$valor_x2 = ( $float_b * -1 + sqrt( $delta) ) / ( 2 * $float_a);
 							if( $valor_x1 == -0.0)
 							{
 								$valor_x1 = 0.0;
