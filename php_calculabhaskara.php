@@ -47,23 +47,11 @@
 					} else {
 						if( $delta == 0 )
 						{
-							$valor_x = ( $float_b * -1 ) / ( 2 * $float_a);
-							if( $valor_x == -0.0)
-							{
-								$valor_x = 0.0;
-							}
+							$valor_x = ( $float_b * -1 ) / ( 2 * $float_a) ?: 0.0;
 							$resultado = "x = " . strval( $valor_x);
 						} else {
-							$valor_x1 = ( $float_b * -1 - sqrt( $delta) ) / ( 2 * $float_a);
-							$valor_x2 = ( $float_b * -1 + sqrt( $delta) ) / ( 2 * $float_a);
-							if( $valor_x1 == -0.0)
-							{
-								$valor_x1 = 0.0;
-							}
-							if( $valor_x2 == -0.0)
-							{
-								$valor_x2 = 0.0;
-							}
+							$valor_x1 = ( $float_b * -1 - sqrt( $delta) ) / ( 2 * $float_a) ?: 0.0;
+							$valor_x2 = ( $float_b * -1 + sqrt( $delta) ) / ( 2 * $float_a) ?: 0.0;
 							$resultado = "x = " . strval( $valor_x1) . " e " . strval( $valor_x2);
 						}
 					}
