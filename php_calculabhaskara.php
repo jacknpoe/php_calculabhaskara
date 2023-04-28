@@ -36,7 +36,7 @@
 						{
 							$resultado = "x = 0";
 						} else {
-							$resultado = "x = " . strval( $float_c / $float_b * -1 );
+							$resultado = "x = " . strval( $float_c / $float_b * -1 ) ?: 0.0;
 						}
 					}
 				} else {
