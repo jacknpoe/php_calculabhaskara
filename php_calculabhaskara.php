@@ -63,7 +63,7 @@
 
 		<form action="php_calculabhaskara.php" method="POST" style="border: 0px">
 			<p>
-				<input type="text" name="valor_a" style="width: 50px" value="<?php echo $valor_a; ?>"> x² +
+				<input type="text" name="valor_a" style="width: 50px" value="<?php echo $valor_a; ?>" autofocus> x² +
 				<input type="text" name="valor_b" style="width: 50px" value="<?php echo $valor_b; ?>"> x +
 				<input type="text" name="valor_c" style="width: 50px" value="<?php echo $valor_c; ?>"> = 0
 			</p>
