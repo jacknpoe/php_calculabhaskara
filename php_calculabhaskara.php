@@ -63,9 +63,9 @@
 
 		<form action="php_calculabhaskara.php" method="POST" style="border: 0px">
 			<p>
-				<input type="text" name="valor_a" style="width: 50px" value="<?php echo $valor_a; ?>" autofocus> x² +
-				<input type="text" name="valor_b" style="width: 50px" value="<?php echo $valor_b; ?>"> x +
-				<input type="text" name="valor_c" style="width: 50px" value="<?php echo $valor_c; ?>"> = 0
+				<input type="text" name="valor_a" style="width: 50px" value="<?php echo htmlspecialchars( $valor_a, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>" autofocus> x² +
+				<input type="text" name="valor_b" style="width: 50px" value="<?php echo htmlspecialchars( $valor_b, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>"> x +
+				<input type="text" name="valor_c" style="width: 50px" value="<?php echo htmlspecialchars( $valor_c, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>"> = 0
 			</p>
 			<p><input type="submit" name="calcular" value="Calcular"></p>
 		</form>
