@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
-		<title>Calcula a fórmula de Bhaskara</title>
+		<title>Calcula a fÃ³rmula de Bhaskara</title>
  		<link rel="stylesheet" href="php_calculabhaskara.css"/>
 		<link rel="icon" type="image/png" href="php_calculabhaskara.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<?php
-			header( "Content-Type: text/html; charset=ISO-8859-1", true);
-			date_default_timezone_set ("America/Sao_Paulo");
+			header( "Content-Type: text/html; charset=UTF-8", true);
 
 			$resultado = '';
 			$valor_a = '';
@@ -25,12 +24,12 @@
 				$float_b = floatval( str_replace( ',', '.', $valor_b));
 				$float_c = floatval( str_replace( ',', '.', $valor_c));
 
-				// mágica
+				// mÃ¡gica
 				if( $float_a == 0.0)
 				{
 					if( $float_b == 0.0)
 					{
-						$resultado = " x é indefinido";
+						$resultado = " x Ã© indefinido";
 					} else {
 						if( $float_c == 0.0)
 						{
@@ -43,7 +42,7 @@
 					$delta = pow( $float_b, 2) - ( 4 * $float_a * $float_c);
 					if( $delta < 0)
 					{
-						$resultado = "x é indefinido";
+						$resultado = "x Ã© indefinido";
 					} else {
 						if( $delta == 0 )
 						{
@@ -59,11 +58,11 @@
 				$resultado = str_replace( '.', ',', $resultado);
 			}
 		?>
-		<h1>Calcula a fórmula de Bhaskara<br></h1>
+		<h1>Calcula a fÃ³rmula de Bhaskara<br></h1>
 
 		<form action="php_calculabhaskara.php" method="POST" style="border: 0px">
 			<p>
-				<input type="text" name="valor_a" style="width: 50px" value="<?php echo htmlspecialchars( $valor_a, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>" autofocus> x² +
+				<input type="text" name="valor_a" style="width: 50px" value="<?php echo htmlspecialchars( $valor_a, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>" autofocus> xÂ² +
 				<input type="text" name="valor_b" style="width: 50px" value="<?php echo htmlspecialchars( $valor_b, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>"> x +
 				<input type="text" name="valor_c" style="width: 50px" value="<?php echo htmlspecialchars( $valor_c, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>"> = 0
 			</p>
@@ -71,7 +70,7 @@
 		</form>
 
 		<br><p>Resultado: <?php echo $resultado; ?></p><br><br>
-		<p><a href="https://github.com/jacknpoe/php_calculabhaskara">Repositório no GitHub</a></p><br><br>
+		<p><a href="https://github.com/jacknpoe/php_calculabhaskara">RepositÃ³rio no GitHub</a></p><br><br>
 		<form action="index.html" method="POST" style="border: 0px">
 			<p><input type="submit" name="voltar" value="Voltar"></p>
 		</form>
